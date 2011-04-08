@@ -11,11 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<!--<link rel="stylesheet" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" type="text/css" media="all"/>
-<link rel="stylesheet" href="css/jquery.hrzAccordion.examples.css" type="text/css" media="all"/>
-<link rel="stylesheet" href="css/jquery.hrzAccordion.defaults.css" type="text/css" media="all"/>-->
 <link rel="stylesheet" href="css/main.css" type="text/css" media="all"/>
-<!--<link rel="stylesheet" href="css/style.css" type="text/css" media="all"/>-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js" type="text/javascript"></script>
 <script src="scripts/jquery.quicksand.js" type="text/javascript"></script>
@@ -167,20 +163,25 @@
 			    		</div>
 			    	</div>
 			      <ul id="students" class="image-grid">
-					<?php
-					 	$query =  $db_control->query_getStudents();
-						$i=1;
-						while($row = mysql_fetch_array($query)){ 
-							echo '<li data-id="id-'.$i.'" data-type="'.$row["grp_name"].'">';
-							echo '<img src="./images/students/'.$row["stu_fname"].'_'.$row["std_lname"].'.jpg" />';
-							echo '<div class="StuName"><strong>'. $row["stu_fname"] .'</strong> ';
-							echo '<span data-type="'.$row["std_lname"].'">'.$row["std_lname"].'</span></div>';
-							echo '</li>';
-							$i++;
-						}
-	
-					?>
-				</ul>
+						<?php
+						 	$query =  $db_control->query_getStudents();
+							$i=1;
+							while($row = mysql_fetch_array($query)){ 
+								echo '<li data-id="id-'.$i.'" data-type="'.$row["grp_name"].'">';
+								echo '<img src="./images/students/'.$row["stu_fname"].'_'.$row["std_lname"].'.jpg" />';
+								echo '<div class="StuName"><strong>'. $row["stu_fname"] .'</strong> ';
+								echo '<span data-type="'.$row["std_lname"].'">'.$row["std_lname"].'</span></div>';
+								echo '</li>';
+								$i++;
+							}
+						?>
+				  	</ul>
+					<div id="proj_desc">
+						<img id="proj_logo" src="" />
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu euismod ipsum. Nunc gravida mauris vestibulum mauris pharetra ultricies. In eu urna sit amet felis aliquet tristique ac eu mi. Aliquam vehicula ligula a lacus ultricies venenatis.
+Maecenas id leo eu sapien pellentesque porttitor eget ac tortor. In ipsum nulla, lobortis vel tempor imperdiet, pretium non erat. Etiam id dui ut arcu molestie feugiat ullamcorper non justo.
+					</div>
+					
 			      <div class="sorting_box" id="filter">
 			            <fieldset id="groups">
 			              <legend>Groups</legend>
